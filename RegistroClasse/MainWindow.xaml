@@ -15,24 +15,26 @@
                     </Style>
                 </ComboBox.ItemContainerStyle>
             </ComboBox>
-            <Button Content="Carica Studenti" Click="BtnCaricaStudenti" Margin="0,5,0,0"/>
+            <Button Content="Carica Studenti" Click="BtnCaricaStudenti" FontSize="14" Margin="0,5,0,0"/>
             <DataGrid x:Name="dataGridStudenti" AutoGenerateColumns="True" Height="200"/>
-            <Button Content="Elimina Studente" Click="BtnEliminaStudente" Margin="0,5,0,0"/>
+            <Button Content="Elimina Studente" Click="BtnEliminaStudente" FontSize="14" Margin="0,5,0,0"/>
 
-            <TextBlock Text="Nome Classe" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBlock Text="Creazione Nuova Classe" FontSize="16" FontWeight="Bold" Margin="0,10,0,5" HorizontalAlignment="Center" Foreground="Red"/>
+            <TextBlock Text="Nome Classe" IsHitTestVisible="False" FontSize="14" Margin="0,2,0,0" VerticalAlignment="Top" />
             <TextBox x:Name="txtNomeClasse"/>
 
-            <TextBlock Text="Anno" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBlock Text="Anno" IsHitTestVisible="False" Margin="0,2,0,0" FontSize="14"  VerticalAlignment="Top" />
             <TextBox x:Name="txtAnno"/>
-            <Button Content="Aggiungi Classe" Click="BtnCreaClasse" Margin="0,5,0,0"/>
+            <Button Content="Aggiungi Classe" Click="BtnCreaClasse" FontSize="14"  Margin="0,5,0,0"/>
 
-            <TextBlock Text="Nome Studente" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBlock Text="Creazione Nuovo Studente" FontSize="16" FontWeight="Bold" Margin="0,10,0,5" HorizontalAlignment="Center" Foreground="Red"/>
+            <TextBlock Text="Nome Studente" IsHitTestVisible="False" FontSize="14"  Margin="0,2,0,0" VerticalAlignment="Top" />
             <TextBox x:Name="txtNomeStudente"/>
 
-            <TextBlock Text="Cognome Studente" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBlock Text="Cognome Studente" IsHitTestVisible="False" FontSize="14"  Margin="0,2,0,0" VerticalAlignment="Top" />
             <TextBox x:Name="txtCognomeStudente"/>
 
-            <Button Content="Aggiungi Studente" Click="BtnCreaStudente" Margin="0,5,0,0"/>
+            <Button Content="Aggiungi Studente" Click="BtnCreaStudente" FontSize="14"  Margin="0,5,0,0"/>
         </StackPanel>
 
     </Grid>
