@@ -45,6 +45,12 @@ namespace RegistroDiClasse
 
         private void BtnCreaClasse(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNomeClasse.Text) || string.IsNullOrWhiteSpace(txtAnno.Text))
+            {
+                MessageBox.Show("Inserisci sia il nome della classe che l'anno.");
+                return;
+            }
+
             using SqlConnection connection = new SqlConnection(connectionStr);
             SqlCommand command = new SqlCommand("CreaClasse", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -98,6 +104,13 @@ namespace RegistroDiClasse
                 MessageBox.Show("Seleziona una classe prima di creare uno studente.");
                 return;
             }
+
+            if (string.IsNullOrWhiteSpace(txtNomeStudente.Text) || string.IsNullOrWhiteSpace(txtCognomeStudente.Text))
+            {
+                MessageBox.Show("Inserisci sia il nome che il cognome dello studente.");
+                return;
+            }
+
             using SqlConnection connection = new SqlConnection(connectionStr);
             SqlCommand command = new SqlCommand("CreaStudente", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
