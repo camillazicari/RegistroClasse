@@ -1,0 +1,39 @@
+﻿<Window x:Class="RegistroDiClasse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDiClasse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <StackPanel Margin="10">
+            <ComboBox x:Name="comboBoxClassi" Margin="0,5,0,0" HorizontalContentAlignment="Center">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <Button Content="Carica Studenti" Click="BtnCaricaStudenti" Margin="0,5,0,0"/>
+            <DataGrid x:Name="dataGridStudenti" AutoGenerateColumns="True" Height="200"/>
+            <Button Content="Elimina Studente" Click="BtnEliminaStudente" Margin="0,5,0,0"/>
+
+            <TextBlock Text="Nome Classe" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBox x:Name="txtNomeClasse"/>
+
+            <TextBlock Text="Anno" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBox x:Name="txtAnno"/>
+            <Button Content="Aggiungi Classe" Click="BtnCreaClasse" Margin="0,5,0,0"/>
+
+            <TextBlock Text="Nome Studente" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBox x:Name="txtNomeStudente"/>
+
+            <TextBlock Text="Cognome Studente" IsHitTestVisible="False" Foreground="DarkRed" Margin="0,2,0,0" VerticalAlignment="Top" />
+            <TextBox x:Name="txtCognomeStudente"/>
+
+            <Button Content="Aggiungi Studente" Click="BtnCreaStudente" Margin="0,5,0,0"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
