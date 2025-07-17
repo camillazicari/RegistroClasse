@@ -1,0 +1,64 @@
+CREATE DATABASE RegistroDiClasse
+GO
+
+USE RegistroDiClasse
+GO
+
+CREATE TABLE CLASSI(
+IdClasse INT PRIMARY KEY IDENTITY(1,1),
+NomeClasse NVARCHAR(100) NOT NULL,
+Anno INT NOT NULL
+)
+
+
+CREATE TABLE STUDENTI(
+IdStudente INT PRIMARY KEY IDENTITY(1,1),
+Nome NVARCHAR(100) NOT NULL,
+Cognome NVARCHAR(100) NOT NULL,
+IdClasse INT,
+CONSTRAINT FK_ID_CLASSE FOREIGN KEY (IdClasse) REFERENCES CLASSI(IdClasse)
+)
+GO
+
+CREATE PROCEDURE CreaClasse
+    @NomeClasse NVARCHAR(50),
+    @Anno INT
+AS
+BEGIN
+    INSERT INTO CLASSI(NomeClasse, Anno) 
+	VALUES (@NomeClasse, @Anno);
+    SELECT SCOPE_IDENTITY() AS IdClasse;
+END
+GO
+
+CREATE PROCEDURE CaricaStudentiPerClasse
+	@IdClasse INT
+AS
+BEGIN
+	SELECT IdStudente, Nome, Cognome, IdClasse 
+	FROM STUDENTI 
+	WHERE IdClasse = @IdClasse
+	ORDER BY Cognome
+END 
+GO
+
+CREATE PROCEDURE CreaStudente
+	@Nome NVARCHAR(100),
+	@Cognome NVARCHAR(100),
+	@IdClasse INT
+AS
+BEGIN
+	INSERT INTO STUDENTI(Nome, Cognome, IdClasse) 
+	VALUES(@Nome, @Cognome, @IdClasse);
+	SELECT SCOPE_IDENTITY() AS IdStudente;
+END
+GO
+
+CREATE PROCEDURE EliminaStudente
+	@IdStudente INT
+AS
+BEGIN
+	DELETE FROM STUDENTI 
+	WHERE IdStudente = @IdStudente;
+END
+GO
